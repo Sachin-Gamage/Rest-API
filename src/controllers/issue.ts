@@ -1,5 +1,5 @@
 /**
- * 
+ * Controller class
  */
 
 import { Request, Response, json } from 'express';

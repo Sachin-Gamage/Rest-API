@@ -1,6 +1,7 @@
 /**
- * 
+ * Service Class
  */
+
 import fetch from 'node-fetch';
 
 class IssueService {
