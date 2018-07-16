@@ -1,7 +1,6 @@
 import * as express from 'express'
 import IssueController from './controllers/issue';
 import * as bodyParser from 'body-parser';
-import { BASE_URL } from './constants/config';
 class App {
   public express;
   constructor() {
@@ -15,7 +14,7 @@ class App {
     router.post('/createissue', IssueController.createIssue);
     router.delete('/deleteissue/:issueid', IssueController.deleteIssue);
     this.express.use(bodyParser());
-    this.express.use(BASE_URL, router);
+    this.express.use('/api/v1', router);
   }
 }
 

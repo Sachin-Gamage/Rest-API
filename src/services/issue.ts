@@ -24,7 +24,7 @@ class IssueService {
     }
 
     public deleteIssue(authHeader: string, issueId: string) {
-        return fetch(`${JIRA_ENDPOINT}/${issueId}`, {
+        return fetch(`${JIRA_ENDPOINT}/rest/api/2/issue${issueId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
