@@ -3,7 +3,7 @@
 
 **Create Issue**
 ----
-  Returns the status as a string.
+  Returns the status as a json object.
 
 * **URL**
 
@@ -19,23 +19,42 @@
  
    `id=[integer]` -->
 
-* **Data Params**
+* **Request Body**
 
   [ Issue Data ]
 
 * **Success Response:**
 
   * **Code:** 200 <br />
-  * **Content:** `{"message": "Issue Created"}`<br />
+  * **Content:** `{"Status": "Issue Created","developerMessage":<http response> }`<br />
  
 * **Error Response:**
 
   * **Code:** 500 <br />
-  * **Content:** `{message: 'Issue Creation Failed',error: <http error>}`
+  * **Content:** `{Status: 'Issue Creation Failed',error: <http error>}`
 
 * **Sample Call:**
 
   ```javascript
+    var data = {
+    "fields": {
+      "project": {
+        "id": "10000"
+      },
+      "summary": "Issue82",
+      "issuetype": {
+        "id": "10000"
+      },
+      "labels": [
+        "bugfix",
+        "blitz_test"
+      ],
+      "description": "Sample Description",
+      "fixVersions": [
+      ],
+      "customfield_10010": "CutomField"
+    }
+  }
     $.ajax({
       url: "/api/v1/createissue",
       dataType: "json",
@@ -49,7 +68,7 @@
 --------------------
 **Delete Issue**
 ----
-  Returns the status as a string.
+  Returns the status as a json object.
 
 * **URL**
 
@@ -69,12 +88,12 @@
 * **Success Response:**
 
   * **Code:** 200 <br />
-  * **Content:** `{"message": "Issue Deleted"}`<br />
+  * **Content:** `{"Status": "Issue Deleted"}`<br />
  
 * **Error Response:**
 
   * **Code:** 500 <br />
-  * **Content:** `{message: 'Issue Deletion Failed',error: <http error>}`
+  * **Content:** `{Status: 'Issue Deletion Failed',error: <http error>}`
 
 * **Sample Call:**
 

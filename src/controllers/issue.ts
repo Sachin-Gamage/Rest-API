@@ -12,10 +12,10 @@ class IssueController {
 
     public createIssue(req: Request, res: Response) {
         return IssueService.createIssue(req.headers['authorization'], req.body).then(response => {
-            res.status(200).json({ message: 'Issue Created' });
+            res.status(200).json({ Status: 'Issue Created', developerMessage: response });
         }).catch((error) => {
             res.status(500).json({
-                message: 'Issue Creation Failed',
+                Status: 'Issue Creation Failed',
                 error: error
             });
         });
@@ -23,10 +23,10 @@ class IssueController {
 
     public deleteIssue(req: Request, res: Response) {
         return IssueService.deleteIssue(req.headers['authorization'], req.params.issueid).then(response => {
-            res.status(200).json({ message: 'Issue Deleted' });
+            res.status(200).json({ Status: 'Issue Deleted' });
         }).catch((error) => {
             res.status(500).json({
-                message: 'Issue Deletion Failed',
+                Status: 'Issue Deletion Failed',
                 error: error
             });
         });

@@ -8,7 +8,7 @@ import { JIRA_ENDPOINT } from '../constants/config';
 class IssueService {
 
     public createIssue(authHeader: string, body: Object): Promise<any> {
-        return fetch(JIRA_ENDPOINT, {
+        return fetch(`${JIRA_ENDPOINT}/rest/api/2/issue`, {
             method: 'POST',
             body: JSON.stringify(body),
             headers: {
@@ -17,23 +17,24 @@ class IssueService {
                 'Authorization': authHeader
             }
         }).then((res) => {
-            return res
+            return res.json();
         }).catch((err) => {
-            return err
+            return err.json();
         });
     }
 
     public deleteIssue(authHeader: string, issueId: string) {
-        return fetch(`${JIRA_ENDPOINT}/rest/api/2/issue${issueId}`, {
+        return fetch(`${JIRA_ENDPOINT}/rest/api/2/issue/${issueId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
+                'Accept': 'application/json',
                 'Authorization': authHeader
             }
         }).then((res) => {
-            return res
+            return res;
         }).catch((err) => {
-            return err
+            return err;
         });
     }
 }
