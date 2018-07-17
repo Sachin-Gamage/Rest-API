@@ -12,12 +12,10 @@
 * **Method:**
 
   `POST`
-<!--   
-*  **URL Params**
-
-   **Required:**
- 
-   `id=[integer]` -->
+* **Headers:**
+  Authorization : <Base Auth>
+  Content-Type : application/json
+  Accept: application/json
 
 * **Request Body**
 
@@ -77,6 +75,11 @@
 * **Method:**
 
   `POST`
+
+* **Headers:**
+Authorization : <Base Auth>
+Content-Type : application/json
+Accept: application/json
   
 *  **URL Params**
 
