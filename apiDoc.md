@@ -13,9 +13,7 @@
 
   `POST`
 * **Headers:**
-  Authorization : <Base Auth>
-  Content-Type : application/json
-  Accept: application/json
+  Authorization : [Base Auth],<br />Content-Type : application/json,<br/>Accept: application/json
 
 * **Request Body**
 
@@ -77,9 +75,7 @@
   `POST`
 
 * **Headers:**
-Authorization : <Base Auth>
-Content-Type : application/json
-Accept: application/json
+  Authorization : [Base Auth],<br />Content-Type : application/json,<br/>Accept: application/json
   
 *  **URL Params**
 
